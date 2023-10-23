@@ -28,14 +28,18 @@ add_action("wp_enqueue_scripts","astt_enqueue_style");
 // adding JavaScript
 function astt_enqueue_scripts(){
     //wp_enqueue_script('jquery');
+    //wp_enqueue_script('astt-js', plugins_url('js/jquery-3.3.1.min.js', __FILE__), array());
     wp_enqueue_script('astt-script', plugins_url('js/jquery.back-to-top.js', __FILE__),array(), '1.0.0');
 }
+
 add_action("wp_enqueue_scripts","astt_enqueue_scripts");
 
 //Plugin setting Activation
 function astt_scroll_script(){?>
+
+</script>
     <script type="text/javascript">
-	jQuery(document).ready(function () {
+        jQuery(document).ready(function(){
             $('.bck').backToTop({
                 iconName : 'fas fa-arrow-up',
                 fxName : 'rightToLeft'
